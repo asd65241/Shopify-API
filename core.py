@@ -181,7 +181,10 @@ class ShopifyToolkit:
 
     @Error_Handler
     def getSalesND(self, date=0):
-        today = self.__getDay(-1)
+        if date == 0:
+            today = self.__getDay(-1)
+        else:
+            today = self.__getDay(0)
         nday = self.__getDay(date)
         return self.getSales(start_date=nday, end_date=today)
 

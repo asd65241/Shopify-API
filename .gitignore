@@ -1,3 +1,4 @@
 .env
 sales-record/
 docker-compose.yml
+local-test.py
