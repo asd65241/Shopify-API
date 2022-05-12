@@ -226,11 +226,16 @@ if __name__ == '__main__':
         shop_url = ""
         api_secret = ""
 
-        tbox = ShopifyToolkit(shop_url=shop_url, api_secret=api_secret)
-        sales_data = tbox.getSalesND(1)
-        print(sales_data)
+        extract_nday = 30
 
-        # df = pd.DataFrame(sales_data)
-        # df.to_excel("orders.xlsx")
+        tbox = ShopifyToolkit(shop_url=shop_url, api_secret=api_secret)
+
+        sales_data = []
+        for i in range(extract_nday):
+            sales_data += tbox.getSalesND(i)
+
+        df = pd.DataFrame(sales_data)
+        df.to_excel("orders.xlsx")
+
     except Exception as msg:
         print(msg)

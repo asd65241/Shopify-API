@@ -51,7 +51,7 @@ networks:
 ```
 
 Then, do the following command:
-```
+```bash
 $ sudo docker-compose up -d 
 ```
 
@@ -61,8 +61,13 @@ This will copy your environment variable to the container.
 
 It is suggested to use pipenv to initialize your dev environment
 
-```
+```bash
 $ pipenv shell
+```
+
+Then, run server by
+```bash
+$ bash run-server.sh
 ```
 
 ## Contributing
